@@ -1,0 +1,429 @@
+:root {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #102542;
+  background:
+    radial-gradient(circle at top, rgba(247, 178, 103, 0.35), transparent 32%),
+    linear-gradient(180deg, #f7efe5 0%, #f4f1ea 52%, #efe4d2 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.site-header,
+.page-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  padding: 24px 0 32px;
+}
+
+.brand-block {
+  max-width: 620px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-kicker,
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: #8c3b2f;
+  font-weight: 700;
+}
+
+.brand-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 0.95;
+}
+
+.brand-copy {
+  margin: 12px 0 0;
+  max-width: 52ch;
+  color: #3d5168;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link,
+.nav-button,
+.primary-link,
+.secondary-link,
+.primary-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.78rem 1.15rem;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.nav-link,
+.nav-button,
+.secondary-link {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.nav-link.is-active {
+  background: #102542;
+  color: #fffaf2;
+}
+
+.nav-button {
+  color: #102542;
+}
+
+.primary-link,
+.primary-button {
+  background: #f87060;
+  color: white;
+}
+
+.secondary-link {
+  color: #102542;
+}
+
+.nav-link:hover,
+.nav-button:hover,
+.primary-link:hover,
+.secondary-link:hover,
+.primary-button:hover {
+  transform: translateY(-1px);
+}
+
+.nav-button:disabled,
+.primary-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.page-shell {
+  padding-bottom: 48px;
+}
+
+.page-stack {
+  display: grid;
+  gap: 24px;
+}
+
+.hero-card,
+.account-header,
+.auth-card,
+.detail-panel,
+.status-card,
+.book-card,
+.reservation-card {
+  background: rgba(255, 250, 242, 0.86);
+  border: 1px solid rgba(16, 37, 66, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(16, 37, 66, 0.08);
+}
+
+.hero-card,
+.account-header {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1.4fr 0.8fr;
+  padding: 28px;
+}
+
+.hero-card h1,
+.auth-intro h1,
+.detail-panel h1,
+.account-header h1 {
+  margin: 8px 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  line-height: 1.02;
+}
+
+.hero-card p,
+.detail-description,
+.auth-intro p,
+.account-header p,
+.reservation-copy p {
+  margin: 0;
+  color: #3d5168;
+}
+
+.search-field,
+.auth-card label {
+  display: grid;
+  gap: 8px;
+}
+
+.search-field span,
+.auth-card span {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.search-field input,
+.auth-card input {
+  width: 100%;
+  border: 1px solid rgba(16, 37, 66, 0.14);
+  border-radius: 18px;
+  background: white;
+  padding: 0.95rem 1rem;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  overflow: hidden;
+}
+
+.book-cover {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  background: #d8d2c8;
+}
+
+.book-card-body {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.book-card-body h2,
+.reservation-copy h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.book-author {
+  margin: 0;
+  color: #8c3b2f;
+  font-weight: 700;
+}
+
+.book-description {
+  margin: 0;
+  color: #4d6074;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.4rem 0.72rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.availability.is-open {
+  background: rgba(92, 153, 89, 0.16);
+  color: #2f6f2d;
+}
+
+.availability.is-taken {
+  background: rgba(140, 59, 47, 0.16);
+  color: #8c3b2f;
+}
+
+.detail-layout,
+.auth-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.detail-cover,
+.reservation-cover {
+  width: 100%;
+  border-radius: 28px;
+  object-fit: cover;
+  background: #d8d2c8;
+}
+
+.detail-cover {
+  min-height: 540px;
+}
+
+.detail-panel,
+.auth-card {
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+}
+
+.back-link,
+.inline-note {
+  color: #3d5168;
+}
+
+.auth-intro {
+  padding: 20px 0;
+}
+
+.status-card {
+  margin: 0;
+  padding: 16px 18px;
+}
+
+.tone-error {
+  color: #7c271d;
+  background: rgba(248, 112, 96, 0.12);
+}
+
+.tone-neutral {
+  color: #23415f;
+}
+
+.inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.account-summary {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  justify-items: end;
+}
+
+.account-summary span {
+  color: #4d6074;
+}
+
+.account-summary strong {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.reservation-list {
+  display: grid;
+  gap: 18px;
+}
+
+.reservation-card {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 18px;
+  padding: 18px;
+  align-items: start;
+}
+
+.reservation-cover {
+  height: 220px;
+}
+
+.reservation-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.reservation-actions {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.compact {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .site-header,
+  .hero-card,
+  .account-header,
+  .detail-layout,
+  .auth-layout,
+  .compact,
+  .reservation-card {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    align-items: start;
+  }
+
+  .account-summary {
+    justify-items: start;
+  }
+
+  .detail-cover {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .site-header {
+    padding-top: 8px;
+  }
+
+  .book-cover {
+    height: 280px;
+  }
+}
